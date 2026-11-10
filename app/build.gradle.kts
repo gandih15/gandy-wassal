@@ -11,8 +11,8 @@ android {
         applicationId = "com.gandy.wassal"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.0.1"
         // سر التفعيل بييجي من GitHub Secret اسمه WASSAL_SECRET (مش مكتوب في الكود عشان الريبو)
         val secret = System.getenv("WASSAL_SECRET")?.takeIf { it.isNotBlank() } ?: "LOCAL-DEV-SECRET"
         buildConfigField("String", "LICENSE_SECRET", "\"$secret\"")
