@@ -2,7 +2,11 @@ name: Build APK
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -24,7 +28,19 @@ jobs:
           WASSAL_SECRET: ${{ secrets.WASSAL_SECRET }}
         run: gradle assembleRelease --no-daemon
 
+      - name: Rename APK
+        run: cp app/build/outputs/apk/release/*.apk GandyWassal.apk
+
       - uses: actions/upload-artifact@v4
         with:
           name: GandyWassal-apk
-          path: app/build/outputs/apk/release/*.apk
+          path: GandyWassal.apk
+
+      # رابط ثابت للعملاء: releases/latest/download/GandyWassal.apk
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: غاندي وصّل v1.0.${{ github.run_number }}
+          make_latest: true
+          files: GandyWassal.apk
