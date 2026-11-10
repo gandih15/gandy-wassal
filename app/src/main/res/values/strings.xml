@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">غاندي وصّل</string>
+    <string name="acc_label">غاندي وصّل – الإرسال التلقائي</string>
+    <string name="acc_desc">بتسمح للتطبيق إنه يضغط زرار الإرسال في واتساب بدلك أثناء الحملات اللي انت بتبدأها بس. التطبيق مش بيقرا رسايلك ولا بيبعت أي حاجة لبرة الموبايل.</string>
+</resources>
